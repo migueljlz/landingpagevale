@@ -9,12 +9,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Valentina de la Cruz">
   <meta property="og:description" content="Creadora de contenido y lifestyle.">
-  <meta property="og:image" content="assets/fondo.png">
+  <meta property="og:image" content="assets/fondohorizontal.jpeg">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e8b54a' d='M12 21s-8.5-5.2-10.6-10C.1 7.700 2 4 5.700 4c2.500 0 4.700 1.300 6.300 3.600C13.600 5.300 15.800 4 18.300 4 22 4 23.900 7.700 22.600 11 20.500 15.800 12 21 12 21z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/fondo.png">
+  <link rel="preload" as="image" href="assets/fondovertical.jpeg" media="(max-width: 768px), (orientation: portrait) and (pointer: coarse)">
+  <link rel="preload" as="image" href="assets/fondohorizontal.jpeg" media="(min-width: 769px)">
   <link rel="preload" as="image" href="assets/valentina.webp">
   <style>
     :root {
@@ -50,10 +51,15 @@
       margin: var(--frame-gap);
       overflow: hidden;
       border-radius: clamp(0px, 2.4vw, 22px);
-      background: #05070d url("assets/fondo.png") center / cover no-repeat;
+      background: #05070d url("assets/fondohorizontal.jpeg") center / cover no-repeat;
       isolation: isolate;
       display: flex;
       flex-direction: column;
+    }
+
+    /* Celular: fondo vertical */
+    @media (max-width: 768px), (orientation: portrait) and (pointer: coarse) {
+      .frame { background-image: url("assets/fondovertical.jpeg"); }
     }
 
     .frame::before {
